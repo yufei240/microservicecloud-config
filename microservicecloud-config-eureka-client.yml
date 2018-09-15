@@ -1,11 +1,10 @@
 spring:
   profiles:
-    active: 
-      - dev
-      
+    active:
+    - dev
 ---
 server:
-     port: 7001 #注册中心占用7001端口
+  port: 7001
 
 spring:
   profiles: dev
@@ -16,14 +15,13 @@ eureka:
   instance:
     hostname: eureka7001.com
   client:
-    register-with-eureka: false #当前eureka-server自己不注册进服务列表中
-    fetch-registry: false #不通过eureka获取注册信息
-    service-url: 
+    register-with-eureka: false  # 当前的eureka-server自己不注册进服务列表中
+    fetch-registry: false  # 不通过eureka获取注册信息
+    service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
-      
 ---
 server:
-  port: 7001 #注册中心占用7001端口
+  port: 7001    # 注册中心占用7001端口
 
 spring:
   profiles: test
@@ -34,7 +32,7 @@ eureka:
   instance:
     hostname: eureka7001.com
   client:
-    register-with-eureka: false #当前eureka-server自己不注册进服务列表中
-    fetch-registry: false #不通过eureka获取注册信息
+    register-with-eureka: false  # 当前的eureka-server自己不注册进服务列表中
+    fetch-registry: false  # 不通过eureka获取注册信息
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
